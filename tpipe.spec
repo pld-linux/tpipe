@@ -1,5 +1,5 @@
-Summary:	replicate stdout into an additional pipeline run in a subshell
-Summary(pl):	skieruj kopiê standardowego wyj¶cia do dodatkowego potoku
+Summary:	Replicating stdout into an additional pipeline run in a subshell
+Summary(pl):	Przekazywanie kopii standardowego wyj¶cia do dodatkowego potoku
 Name:		tpipe
 Version:	1.02
 Release:	1
@@ -17,16 +17,18 @@ be replicated and supplied as the input to two other pipelines
 executing simultaneously.
 
 %description -l pl
-tpipe jest prostym programem narzêdziowym który mo¿e byæ wykorzystany do
-rozdzielenia uniksowego potoku do dwóch potoków. To znaczy wyj¶cie jednego
-potoku mo¿e byæ rozmna¿ane i dostarczane jako wej¶cie do dwóch innych
-potoków wykonywanych równolegle.
+tpipe jest prostym programem narzêdziowym który mo¿e byæ wykorzystany
+do rozdzielenia uniksowego potoku do dwóch potoków. To znaczy wyj¶cie
+jednego potoku mo¿e byæ rozmna¿ane i dostarczane jako wej¶cie do dwóch
+innych potoków wykonywanych równolegle.
 
 %prep
 %setup -q -n %{name}
 
 %build
-%{__make}
+%{__make} \
+	CC="%{__cc}" \
+	CFLAGS="%{rpmcflags}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
