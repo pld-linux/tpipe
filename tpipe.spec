@@ -1,5 +1,5 @@
 Summary:	Replicating stdout into an additional pipeline run in a subshell
-Summary(pl.UTF-8):   Przekazywanie kopii standardowego wyjścia do dodatkowego potoku
+Summary(pl.UTF-8):	Przekazywanie kopii standardowego wyjścia do dodatkowego potoku
 Name:		tpipe
 Version:	1.02
 Release:	1
